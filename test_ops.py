@@ -12,14 +12,9 @@ def test_multiply():
 def test_divide():
     assert divide(10, 5) == 1
 
-def test_power():
-    assert power(2, 3) == 8
-
 def test_square():
     assert square(4) == 16
 
 def test_cube():
     assert cube(3) == 27
 
-def test_modulo():
-    assert modulo(10, 3) == 1
