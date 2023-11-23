@@ -9,3 +9,9 @@ def multiply(x,y):
 
 def divide(x,y):
     return x/y
+
+def cube(x):
+    return x**3
+
+def square(x):
+    return x**2
