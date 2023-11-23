@@ -2,35 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Starting') {
+        stage('Checkout') {
             steps {
-                echo 'Starting App'
+                checkout scmGit(branches: [[name: '*main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/VladiqDanilov/Jenkins-VL-testing.git']])
             }
         }
-
-        stage('Test') {
+        stage('Run') {
             steps {
-                echo 'Testing'
+                git branch: 'main', url: 'https://github.com/VladiqDanilov/Jenkins-VL-testing.git'
+                sh 'python3 ops.py'
             }
         }
-
-        stage('Deploy') {
-                    steps {
-                        echo 'Deploy App'
-                    }
-                }
-
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
+        stage('Test'){
+            steps{
+                sh 'python3 -m pytest'
             }
-        }
-    }
-    post{
-        failure
-        {
-            sleep 2
-            echo 'Building failure'
         }
     }
 }
