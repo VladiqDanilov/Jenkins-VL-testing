@@ -18,3 +18,6 @@ def test_square():
 def test_cube():
     assert cube(3) == 27
 
+
+def test_add():
+    assert add(7, 7) == 13
