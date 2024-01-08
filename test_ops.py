@@ -21,3 +21,14 @@ def test_cube():
 
 def test_add():
     assert add(7, 7) == 13
+
+@pytest.mark.parametrize("a, b, expected_result", [(10, 2, 5),
+                                                   (20, 10, 2),
+                                                   (30, -3, -10),
+                                                   (5, 2, 2.5)])
+def test_divide_good(a, b, expected_result):
+    assert divide(a, b) == expected_result
+
+def test_zero_divide():
+    with pytest.raises(ZeroDivisionError):
+        divide(10, 0)
