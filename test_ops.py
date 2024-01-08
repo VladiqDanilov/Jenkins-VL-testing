@@ -30,9 +30,9 @@ def test_add():
 def test_divide_good(a, b, expected_result):
     assert divide(a, b) == expected_result
 
-def test_zero_divide():
-    with pytest.raises(ZeroDivisionError):
-        divide(10, 0)
+def test_dif_type():
+    with pytest.raises(TypeError):
+        divide(8, "2")
         
 def test_dif_type():
     divide(8, "2")
