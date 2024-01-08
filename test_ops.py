@@ -33,3 +33,6 @@ def test_divide_good(a, b, expected_result):
 def test_zero_divide():
     with pytest.raises(ZeroDivisionError):
         divide(10, 0)
+        
+def test_dif_type():
+    divide(8, "2")
