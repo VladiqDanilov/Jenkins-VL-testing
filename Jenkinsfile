@@ -4,7 +4,11 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scmGit(branches: [[name: '*main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/VladiqDanilov/Jenkins-VL-testing.git']])
+                checkout scmGit(
+                    branches: [[name: '*main']],   // извлечение из gut (в данном случае, Jenkins должен использовать любую ветку, которая имеет в своем названии main)
+                    extensions: [],                 // Расширения ( предпроцесс извлечения кода из git)
+                    userRemoteConfigs: [[url: 'https://github.com/VladiqDanilov/Jenkins-VL-testing.git']] // Конфигурация удаленного репозитория
+                )
             }
         }
         stage('Run') {
