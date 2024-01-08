@@ -21,7 +21,7 @@ def test_cube():
 
 
 def test_add():
-    assert add(7, 7) == 13
+    assert add(7, 7) == 14
 
 @pytest.mark.parametrize("a, b, expected_result", [(10, 2, 5),
                                                    (20, 10, 2),
