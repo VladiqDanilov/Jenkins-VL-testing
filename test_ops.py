@@ -37,3 +37,11 @@ def test_zero_divide():
 def test_dif_type():
     with pytest.raises(TypeError):
         divide(8, "2")
+
+@pytest.mark.parametrize("a, b, expected_result",  [(5, 10, 50)
+                                                    (7, 7, 49)
+                                                    (9, 8, 72)
+                                                    (4, 2, 9)])
+def test_multioly(a, b, expected_result):
+    assert multiply(a, b) == expected_result
+
